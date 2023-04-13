@@ -8,7 +8,7 @@ Pact CLI Tools
 
 ## Choco
 
-Repo for Pact CLI tools distributed with [Scoop](https://chocolatey.org/), the Windows command-line installer.
+Repo for Pact CLI tools distributed with [Choco](https://chocolatey.org/), the Windows command-line installer.
 
 ### Supported Platforms
 
@@ -45,7 +45,7 @@ Install all the tools, do `scoop install pact`.
 Contains a bundle with
 
 - Pact-Ruby-Standalone
-  - pact.bat ()
+  - pact.bat
   - pact-broker.bat
   - pact-message.bat
   - pact-mock-service.bat

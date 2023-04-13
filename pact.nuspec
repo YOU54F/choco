@@ -10,10 +10,33 @@
     <title>pact cli tools</title>
     <authors>Pact Foundation</authors>
     <projectUrl>https://github.com/pact-foundation</projectUrl>
-    <tags>pact SPACE_SEPARATED</tags>
-    <summary>__REPLACE__</summary>
-    <description>__REPLACE__MarkDown_Okay 
+    <tags>pact</tags>
+    <summary>pact cli tools</summary>
+    <description>
+# Pact CLI Tools
 
+[Pact CLI tools](https://docs.pact.io/implementation_guides/cli) distributed with [Choco](https://chocolatey.org/), the Windows command-line installer.
+
+Contains a bundle with
+
+- Pact-Ruby-Standalone
+  - pact.bat
+  - pact-broker.bat
+  - pact-message.bat
+  - pact-mock-service.bat
+  - pact-provider-verifier.bat
+  - pact-stub-service.bat
+  - pactflow.bat
+- pact-plugin-cli.exe
+- pact_verifier_cli.exe
+- pact_mock_server_cli.exe
+
+### Supported Platforms
+
+| OS           | Architecture | Supported |
+| ------- | ------------ | --------- |
+| Windows| | x86_64       | ✅        |
+| Windows | aarch64 (via x86 emulation) |  ✅        |
 
 **Please Note**: This is an automatically updated package. If you find it is
 out of date by more than a day or two, please contact the maintainer(s) and
