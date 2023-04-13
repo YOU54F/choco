@@ -14,7 +14,7 @@ Pact CLI Tools
 
 | OS           | Architecture | Supported |
 | ------- | ------------ | --------- |
-| Windows| | x86_64       | ✅        |
+| Windows| x86_64       | ✅        |
 | Windows | aarch64 (via x86 emulation) |  ✅        |
 
 ### Installation
