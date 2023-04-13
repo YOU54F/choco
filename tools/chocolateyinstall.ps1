@@ -44,9 +44,9 @@ $pactRubyStandalone = @{
   packageName   = $env:ChocolateyPackageName
   unzipLocation = $toolsDir
   # fileType      = 'exe' 
-  url           = 'https://github.com/YOU54F/pact-ruby-standalone/releases/download/v3.1.1/pact-3.1.1-win32.zip'
+  url           = 'https://github.com/YOU54F/pact-ruby-standalone/releases/download/v1.92.0/pact-1.92.0-win32.zip'
   softwareName  = 'pact'
-  checksum      = 'bc2c3d4018971b7bca5f3044afffb09b1e8bec68'
+  checksum      = '805580f8da6c2feb8a4ad0508fcb62ca1c497b2f'
   checksumType  = 'sha1' 
 }
  # https://docs.chocolatey.org/en-us/create/functions/install-chocolateypackage
