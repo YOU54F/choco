@@ -1,14 +1,14 @@
-﻿## Summary
-
-
-
-# pact-cli
+﻿# pact-cli
 
 Pact CLI Tools
 
 ## Choco
 
-Repo for Pact CLI tools distributed with [Choco](https://chocolatey.org/), the Windows command-line installer.
+[![Tests](https://github.com/you54f/pact/actions/workflows/ci.yml/badge.svg)](https://github.com/you54f/pact/actions/workflows/ci.yml)
+
+[Pact CLI tools](https://docs.pact.io/implementation_guides/cli) distributed with [Choco](https://chocolatey.org/), the Windows command-line installer.
+
+[Chocolatey Package Page](https://community.chocolatey.org/packages/pact)
 
 ### Supported Platforms
 
@@ -17,30 +17,9 @@ Repo for Pact CLI tools distributed with [Choco](https://chocolatey.org/), the W
 | Windows| | x86_64       | ✅        |
 | Windows | aarch64 (via x86 emulation) |  ✅        |
 
+### Installation
 
-[![Tests](https://github.com/you54f/pact/actions/workflows/ci.yml/badge.svg)](https://github.com/you54f/pact/actions/workflows/ci.yml)
-
-
-How do I install these manifests?
----------------------------------
-
-To add this bucket, run:
-
-`scoop bucket add pact https://github.com/you54f/scoop`
-
-Search the bucket for available pact cli tools
-
-`scoop search pact`
-
-|Name                 |Version| Source|
-| -------| -------  | --------- |
-|pact                 |0.0.1  | pact|
-|pact_cli             |0.0.1  | pact|
-|pact_mock_server_cli |1.92.0  | pact|
-|pact_plugin_cli      |0.1.0  | pact|
-|pact_verifier_cli    |0.10.5 | pact|
-
-Install all the tools, do `scoop install pact`.
+`choco install pact --version=0.0.1`
 
 Contains a bundle with
 
@@ -59,3 +38,6 @@ You can also install the following tools separately
 - pact_verifier_cli.exe
 - pact_mock_server_cli.exe
 
+## Known Issues
+
+- Running the Pact-Ruby-Standalone based tools will fail if run from outside of Chocos install directory (usually C:) - see [workflow](https://github.com/YOU54F/choco/blob/013efb54cbef6f37c111b7849293a3f847d9064f/.github/workflows/ci.yml)

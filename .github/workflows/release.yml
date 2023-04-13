@@ -59,7 +59,7 @@ jobs:
     needs: release
     runs-on: windows-latest
     steps:
-      - run: choco install pact --debug --verbose
+      - run: choco install pact --debug --verbose --version=${{ needs.get-version.outputs.version }}
       - name: Test scripts
         run: |
           cd C:\
