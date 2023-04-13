@@ -49,7 +49,11 @@ jobs:
       - name: auth with choco registry
         run: choco apikey --key ${{ secrets.CHOCO_API_KEY }} --source https://push.chocolatey.org/
       - name: push package
-        run: choco push Pact.${{ needs.get-version.outputs.version }}.nupkg --source https://push.chocolatey.org/
+        run: |
+          ls
+          cd D:\\a\\choco\\choco
+          ls
+          choco push Pact.${{ needs.get-version.outputs.version }}.nupkg --source https://push.chocolatey.org/
   smoke-test:
     needs: release
     runs-on: windows-latest
