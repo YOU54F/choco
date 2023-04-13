@@ -23,7 +23,7 @@ jobs:
           then
             version="${{ github.event.client_payload.version }}"
           else
-            version="${{ github.workflow.inputs.version }}"
+            version="${{ github.event.inputs.version }}"
           fi
           echo "name=${version}" >> $GITHUB_OUTPUT
   release:
