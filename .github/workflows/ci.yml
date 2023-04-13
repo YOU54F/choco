@@ -38,3 +38,5 @@ jobs:
           pact-provider-verifier.bat --help
           pact-stub-service.bat --help
           pactflow.bat --help
+          pact_mock_server_cli.exe --help
+          pact_verifier_cli.exe --help
