@@ -30,11 +30,11 @@ jobs:
           choco install pact --debug --verbose --source .
       - name: Test scripts
         run: |
-          .\\pact\\bin\\pact.bat
-          .\\pact\\bin\\pact-broker.bat --help
-          .\\pact\\bin\\pact-message.bat --help
-          .\\pact\\bin\\pact-mock-service.bat --help
-          .\\pact\\bin\\pact-plugin-cli.exe --help
-          .\\pact\\bin\\pact-provider-verifier.bat --help
-          .\\pact\\bin\\pact-stub-service.bat --help
-          .\\pact\\bin\\pactflow.bat --help
+          pact.bat
+          pact-broker.bat --help
+          pact-message.bat --help
+          pact-mock-service.bat --help
+          pact-plugin-cli.exe --help
+          pact-provider-verifier.bat --help
+          pact-stub-service.bat --help
+          pactflow.bat --help
