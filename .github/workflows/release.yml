@@ -54,6 +54,10 @@ jobs:
           cd D:\\a\\choco\\choco
           ls
           choco push Pact.${{ needs.get-version.outputs.version }}.nupkg --source https://push.chocolatey.org/
+      - uses: ncipollo/release-action@v1
+        with:
+          artifacts: "Pact.${{ needs.get-version.outputs.version }}.nupkg"
+          tag: pact-${{ needs.get-version.outputs.version }}
   smoke-test:
     needs: release
     runs-on: windows-latest
