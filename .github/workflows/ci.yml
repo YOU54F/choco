@@ -22,7 +22,10 @@ jobs:
     steps:
       - name: Checkout Bucket
         uses: actions/checkout@main
-      - name: Test Bucket
+      - name: Build package
+        run: |
+          choco pack
+      - name: Install Package
         run: |
           choco install pact --debug --verbose --source .
       - name: Test scripts
