@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Read this before creating packages: https://docs.chocolatey.org/en-us/create/create-packages -->
+<!-- Test your packages in a test environment: https://github.com/chocolatey/chocolatey-test-environment -->
+
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>pact</id>
+    <version>0.0.1</version>
+    <packageSourceUrl>https://github.com/YOU54F/homebrew-pact-ruby-standalone</packageSourceUrl>
+    <title>pact cli tools</title>
+    <authors>Pact Foundation</authors>
+    <projectUrl>https://github.com/pact-foundation</projectUrl>
+    <tags>pact SPACE_SEPARATED</tags>
+    <summary>__REPLACE__</summary>
+    <description>__REPLACE__MarkDown_Okay 
+
+
+**Please Note**: This is an automatically updated package. If you find it is
+out of date by more than a day or two, please contact the maintainer(s) and
+let them know the package is no longer updating correctly.
+</description>
+  </metadata>
+  <files>
+    <!-- this section controls what actually gets packaged into the Chocolatey package -->
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
