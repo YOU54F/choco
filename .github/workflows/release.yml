@@ -50,13 +50,10 @@ jobs:
         run: choco apikey --key ${{ secrets.CHOCO_API_KEY }} --source https://push.chocolatey.org/
       - name: push package
         run: |
-          ls
-          cd D:\\a\\choco\\choco
-          ls
-          choco push Pact.${{ needs.get-version.outputs.version }}.nupkg --source https://push.chocolatey.org/
+          choco push pact.${{ needs.get-version.outputs.version }}.nupkg --source https://push.chocolatey.org/
       - uses: ncipollo/release-action@v1
         with:
-          artifacts: "Pact.${{ needs.get-version.outputs.version }}.nupkg"
+          artifacts: "pact.${{ needs.get-version.outputs.version }}.nupkg"
           tag: pact-${{ needs.get-version.outputs.version }}
   smoke-test:
     needs: release
