@@ -18,14 +18,12 @@ jobs:
       - name: Get version
         id: get_version
         run: |
-          version=""
           if [ "${{ github.event_name }}" == "repository_dispatch" ]
           then
-            version="${{ github.event.client_payload.version }}"
+            echo "version=${{ github.event.client_payload.version }}" >> $GITHUB_OUTPUT
           else
-            version="${{ inputs.version }}"
+            echo "version=${{ inputs.version }}" >> $GITHUB_OUTPUT
           fi
-          echo "name=$version" >> $GITHUB_OUTPUT
   release:
     needs: get-version
     runs-on: windows-latest
