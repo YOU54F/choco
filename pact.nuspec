@@ -6,7 +6,7 @@
   <metadata>
     <id>pact</id>
     <version>0.0.1</version>
-    <packageSourceUrl>https://github.com/YOU54F/homebrew-pact-ruby-standalone</packageSourceUrl>
+    <packageSourceUrl>https://github.com/YOU54F/choco</packageSourceUrl>
     <title>pact cli tools</title>
     <authors>Pact Foundation</authors>
     <projectUrl>https://github.com/pact-foundation</projectUrl>

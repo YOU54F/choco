@@ -41,3 +41,16 @@ jobs:
           pactflow.bat --help
           pact_mock_server_cli.exe --help
           pact_verifier_cli.exe --help
+  release:
+    needs: test
+    runs-on: windows-latest
+    steps:
+      - name: Checkout Bucket
+        uses: actions/checkout@main
+      - name: Build package
+        run: |
+          choco pack
+      - name: install Package
+        run: choco apikey --key ${{ secrets.CHOCO_API_KEY }} --source https://push.chocolatey.org/
+      - name: push package
+        run: choco push MyPackage.1.0.nupkg --source https://push.chocolatey.org/
