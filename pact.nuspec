@@ -5,7 +5,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>pact</id>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <packageSourceUrl>https://github.com/YOU54F/choco</packageSourceUrl>
     <title>pact cli tools</title>
     <authors>Pact Foundation</authors>
