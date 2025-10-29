@@ -33,13 +33,12 @@ jobs:
         if: matrix.package == 'pact-legacy'
         run: |
           cd C:\
-          pact-broker.bat --help
-          pact-message.bat --help
-          pact-mock-service.bat --help
-          pact-plugin-cli.exe --help
-          pact-provider-verifier.bat --help
-          pact-stub-service.bat --help
-          pactflow.bat --help
+          pact-broker --help
+          pact-message --help
+          pact-mock-service --help
+          pact-provider-verifier --help
+          pact-stub-service --help
+          pactflow --help
       - name: Uninstall ${{ matrix.package }} Package
         run: |
           choco uninstall ${{ matrix.package }}
