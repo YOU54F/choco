@@ -18,7 +18,10 @@ jobs:
           # "pwsh",
           "cmd"
           ]
-        os: ["windows-latest"]
+        os: [
+          "windows-latest",
+          "windows-11-arm"
+          ]
         package: [
           "pact-legacy",
           "pact",
