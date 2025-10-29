@@ -14,23 +14,25 @@ jobs:
       fail-fast: false
       matrix:
         shell: ["powershell","pwsh","cmd"]
-    runs-on: windows-latest
+        os: ["windows-latest"]
+        package: ["pact-legacy"]
     defaults:
       run:
         shell: ${{ matrix.shell }}
+    runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout Bucket
         uses: actions/checkout@main
-      - name: Build package
+      - name: Build ${{ matrix.package }} Package
         run: |
-          choco pack
-      - name: Install Package
+          choco pack .\${{ matrix.package }}.nuspec
+      - name: Install ${{ matrix.package }} Package
         run: |
-          choco install pact --debug --verbose --source .
+          choco install ${{ matrix.package }} --debug --verbose --source .
       - name: Test scripts
+        if: matrix.package == 'pact-legacy'
         run: |
           cd C:\
-          pact.bat --help
           pact-broker.bat --help
           pact-message.bat --help
           pact-mock-service.bat --help
@@ -38,5 +40,6 @@ jobs:
           pact-provider-verifier.bat --help
           pact-stub-service.bat --help
           pactflow.bat --help
-          pact_mock_server_cli.exe --help
-          pact_verifier_cli.exe --help
+      - name: Uninstall ${{ matrix.package }} Package
+        run: |
+          choco uninstall ${{ matrix.package }}
