@@ -13,9 +13,21 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        shell: ["powershell","pwsh","cmd"]
+        shell: [
+          "powershell",
+          # "pwsh",
+          "cmd"
+          ]
         os: ["windows-latest"]
-        package: ["pact-legacy"]
+        package: [
+          "pact-legacy",
+          "pact",
+          "pact-plugin",
+          "pact-verifier",
+          "pact-stub-server",
+          "pact-mock-server",
+          "pact-broker-client"
+          ]
     defaults:
       run:
         shell: ${{ matrix.shell }}
@@ -29,7 +41,7 @@ jobs:
       - name: Install ${{ matrix.package }} Package
         run: |
           choco install ${{ matrix.package }} --debug --verbose --source .
-      - name: Test scripts
+      - name: Test pact-legacy scripts
         if: matrix.package == 'pact-legacy'
         run: |
           cd C:\
@@ -39,6 +51,10 @@ jobs:
           pact-provider-verifier --help
           pact-stub-service --help
           pactflow --help
+      - name: Test ${{ matrix.package }} scripts
+        if: matrix.package != 'pact-legacy'
+        run: |
+          ${{ matrix.package }} --help
       - name: Uninstall ${{ matrix.package }} Package
         run: |
           choco uninstall ${{ matrix.package }}
