@@ -27,6 +27,12 @@
 choco install pact
 ```
 
+Windows on ARM users, require a `ForceARM64:true` parameter, as choco does support native architecture detection on WoA.
+
+```powershell
+choco install pact --params "'/ForceARM64:true'"
+```
+
 ### Install Individual Tools
 
 ```powershell

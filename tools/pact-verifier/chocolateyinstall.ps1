@@ -10,6 +10,18 @@ $checksumARM64 = 'c668386a3e16cd2748dceb9e87ea214254a8332bae7b1239587a6db6b04bd6
 $is64bit = [System.Environment]::Is64BitOperatingSystem
 $isARM64 = $env:PROCESSOR_ARCHITECTURE -eq 'ARM64' -or $env:PROCESSOR_ARCHITEW6432 -eq 'ARM64'
 
+# Get package parameters
+$packageParameters = Get-PackageParameters
+
+# Allow user to override architecture detection via package parameters
+if ($packageParameters.ContainsKey('ForceARM64')) {
+    $isARM64 = $true
+    Write-Host "Forcing ARM64 architecture via package parameter" -ForegroundColor Yellow
+} elseif ($packageParameters.ContainsKey('Forcex64')) {
+    $isARM64 = $false
+    Write-Host "Forcing x64 architecture via package parameter" -ForegroundColor Yellow
+}
+
 if ($isARM64) {
     $url = $urlARM64
     $checksum = $checksumARM64

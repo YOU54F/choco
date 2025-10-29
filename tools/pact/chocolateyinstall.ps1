@@ -6,9 +6,22 @@ $urlARM64 = 'https://github.com/you54f/pact-cli/releases/download/v0.9.0/pact-aa
 $checksum64 = 'b2b80b76d099ce992a2659cb1e49d9bc8462441a48996191b4b149a4be6a0fdd'
 $checksumARM64 = '7ab2a33304d8eff5299cb4556aa06c9d822ccd8124c4da3973e529a92eb5987c'
 
-# Determine architecture
+
+# Determine architecture (ARM64 detection is unsuppported by Choco)
 $is64bit = [System.Environment]::Is64BitOperatingSystem
 $isARM64 = $env:PROCESSOR_ARCHITECTURE -eq 'ARM64' -or $env:PROCESSOR_ARCHITEW6432 -eq 'ARM64'
+
+# Get package parameters
+$packageParameters = Get-PackageParameters
+
+# Allow user to override architecture detection via package parameters
+if ($packageParameters.ContainsKey('ForceARM64')) {
+    $isARM64 = $true
+    Write-Host "Forcing ARM64 architecture via package parameter" -ForegroundColor Yellow
+} elseif ($packageParameters.ContainsKey('Forcex64')) {
+    $isARM64 = $false
+    Write-Host "Forcing x64 architecture via package parameter" -ForegroundColor Yellow
+}
 
 if ($isARM64) {
     $url = $urlARM64

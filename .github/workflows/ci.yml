@@ -42,8 +42,13 @@ jobs:
         run: |
           choco pack .\${{ matrix.package }}.nuspec
       - name: Install ${{ matrix.package }} Package
+        if: matrix.os != 'windows-11-arm'
         run: |
           choco install ${{ matrix.package }} --debug --verbose --source .
+      - name: Install ${{ matrix.package }} Package
+        if: matrix.os == 'windows-11-arm'
+        run: | # explicitly force ARM64 install via --params "'/ForceARM64:true'" as choco does not have native ARM64 detection
+          choco install ${{ matrix.package }} --debug --verbose --source . --params "'/ForceARM64:true'"
       - name: Test pact-legacy scripts
         if: matrix.package == 'pact-legacy'
         run: |
