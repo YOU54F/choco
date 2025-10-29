@@ -28,17 +28,13 @@ jobs:
     needs: get-version
     runs-on: windows-latest
     steps:
-      - run: choco install pact --debug --verbose --version=${{ needs.get-version.outputs.version }}
+      - run: choco install pact-legacy --debug --verbose --version=${{ needs.get-version.outputs.version }}
       - name: Test scripts
         run: |
           cd C:\
-          pact.bat --help
           pact-broker.bat --help
           pact-message.bat --help
           pact-mock-service.bat --help
-          pact-plugin-cli.exe --help
           pact-provider-verifier.bat --help
           pact-stub-service.bat --help
           pactflow.bat --help
-          pact_mock_server_cli.exe --help
-          pact_verifier_cli.exe --help

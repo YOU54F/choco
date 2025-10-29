@@ -1,50 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Read this before creating packages: https://docs.chocolatey.org/en-us/create/create-packages -->
-<!-- Test your packages in a test environment: https://github.com/chocolatey/chocolatey-test-environment -->
-
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>pact</id>
-    <version>0.0.2</version>
-    <packageSourceUrl>https://github.com/YOU54F/choco</packageSourceUrl>
-    <title>pact cli tools</title>
-    <authors>Pact Foundation</authors>
-    <projectUrl>https://github.com/pact-foundation</projectUrl>
-    <tags>pact</tags>
-    <summary>pact cli tools</summary>
-    <description>
-# Pact CLI Tools
+    <version>0.4.1</version>
+    <packageSourceUrl>https://github.com/YOU54F/pact-cli</packageSourceUrl>
+    <owners>YOU54F</owners>
+    <title>Pact CLI</title>
+    <authors>YOU54F</authors>
+    <projectUrl>https://github.com/YOU54F/pact-cli</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/pact-foundation/pact-logo/master/media/logo-black.png</iconUrl>
+    <copyright>2024 YOU54F</copyright>
+    <licenseUrl>https://github.com/YOU54F/pact-cli/blob/main/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/YOU54F/pact-cli</projectSourceUrl>
+    <docsUrl>https://docs.pact.io</docsUrl>
+    <bugTrackerUrl>https://github.com/YOU54F/pact-cli/issues</bugTrackerUrl>
+    <tags>pact contract-testing testing api microservices cli</tags>
+    <summary>Pact in a single binary - Mock/Stub Server, Provider Verifier, Broker Client &amp; Plugin CLI with Extensions</summary>
+    <description><![CDATA[# Pact CLI with Extensions
 
-[Pact CLI tools](https://docs.pact.io/implementation_guides/cli) distributed with [Choco](https://chocolatey.org/), the Windows command-line installer.
+**Pact in a single binary** - A unified CLI that combines all Pact tools into one executable with an extensible architecture.
 
-Contains a bundle with
+## What's Included
 
-- Pact-Ruby-Standalone
-  - pact.bat
-  - pact-broker.bat
-  - pact-message.bat
-  - pact-mock-service.bat
-  - pact-provider-verifier.bat
-  - pact-stub-service.bat
-  - pactflow.bat
-- pact-plugin-cli.exe
-- pact_verifier_cli.exe
-- pact_mock_server_cli.exe
+This single binary replaces multiple separate installations:
+- **pact-mock-server** - Mock HTTP/gRPC services for consumer testing
+- **pact-verifier** - Provider contract verification
+- **pact-stub-server** - Stub services from Pact files
+- **pact-broker-cli** - Pact Broker client operations
+- **pactflow-cli** - PactFlow SaaS operations
+- **pact-plugin-cli** - Plugin management and execution
 
-### Supported Platforms
+## Extension System
 
-| OS           | Architecture | Supported |
-| ------- | ------------ | --------- |
-| Windows| x86_64       | ✅        |
-| Windows | aarch64 (via x86 emulation) |  ✅        |
+Install additional tools seamlessly:
+```
+pact extension list                     # List available extensions
+pact extension install pactflow-ai      # Install AI-powered contract testing
+pact extension install pact-ruby-standalone  # Legacy Ruby tools compatibility
+pact pactflow ai --help                # Use extensions seamlessly
+```
 
-**Please Note**: This is an automatically updated package. If you find it is
-out of date by more than a day or two, please contact the maintainer(s) and
-let them know the package is no longer updating correctly.
-</description>
+## Quick Start
+
+1. **Check installation**: `pact`
+2. **View help**: `pact --help`
+3. **List extensions**: `pact extension list`
+4. **Install an extension**: `pact extension install pactflow-ai`
+5. **Use extensions**: `pact pactflow ai generate --help`
+
+## Configuration
+
+- **Extensions Directory**: `%USERPROFILE%\.pact\extensions\`
+- **Override Path**: Set `PACT_CLI_EXTENSIONS_HOME` environment variable
+- **Proxy Support**: Respects `HTTP_PROXY` and `HTTPS_PROXY` environment variables
+
+## Documentation
+
+- **Extensions Guide**: https://github.com/YOU54F/pact-cli/blob/main/EXTENSIONS.md
+- **Pact Documentation**: https://docs.pact.io
+- **Getting Started**: https://docs.pact.io/getting_started/
+
+## CI/CD Integration
+
+```yaml
+# GitHub Actions example
+- name: Install Pact CLI
+  run: choco install pact-cli
+
+- name: Install PactFlow AI extension
+  run: pact extension install pactflow-ai
+
+- name: Generate contracts with AI
+  run: pact pactflow ai generate --api-spec openapi.yaml
+```
+
+Perfect for teams using contract-driven development and microservice architectures.
+]]></description>
+    <releaseNotes>See https://github.com/YOU54F/pact-cli/releases for release notes</releaseNotes>
   </metadata>
   <files>
-    <!-- this section controls what actually gets packaged into the Chocolatey package -->
-    <file src="tools\**" target="tools" />
+    <file src="tools\pact\**" target="tools" />
   </files>
 </package>

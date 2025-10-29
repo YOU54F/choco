@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>pact-broker-client</id>
+    <version>0.4.1</version>
+    <packageSourceUrl>https://github.com/YOU54F/choco</packageSourceUrl>
+    <owners>YOU54F</owners>
+    <title>Pact Broker Client</title>
+    <authors>Pact Foundation</authors>
+    <projectUrl>https://github.com/pact-foundation/pact-broker-cli</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/pact-foundation/pact-logo/master/media/logo-black.png</iconUrl>
+    <copyright>2024 Pact Foundation</copyright>
+    <licenseUrl>https://github.com/pact-foundation/pact-broker-cli/blob/main/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/pact-foundation/pact-broker-cli</projectSourceUrl>
+    <docsUrl>https://docs.pact.io</docsUrl>
+    <bugTrackerUrl>https://github.com/pact-foundation/pact-broker-cli/issues</bugTrackerUrl>
+    <tags>pact contract-testing testing api microservices cli broker</tags>
+    <summary>Command line tool for interacting with the Pact Broker</summary>
+    <description><![CDATA[# Pact Broker Client
+
+Command line tool for interacting with the [Pact Broker](https://github.com/pact-foundation/pact_broker), used for publishing and retrieving pacts, verification results, and managing pacticipant data.
+
+## Features
+
+- **Publish pacts** to the Pact Broker
+- **Retrieve pacts** for verification
+- **Record verification results** 
+- **Check deployment safety** with can-i-deploy
+- **Manage pacticipants** and versions
+- **Tag and branch management**
+
+## Quick Start
+
+1. **Check installation**: `pact-broker-client`
+2. **Publish pacts**: `pact-broker-client publish <pact-dir> --broker-base-url <url>`
+3. **Check deployability**: `pact-broker-client can-i-deploy --pacticipant <name> --version <version>`
+4. **Record deployment**: `pact-broker-client record-deployment --pacticipant <name> --version <version> --environment <env>`
+
+## Authentication
+
+Set environment variables for authentication:
+- `PACT_BROKER_USERNAME` and `PACT_BROKER_PASSWORD` for basic auth
+- `PACT_BROKER_TOKEN` for bearer token auth
+
+## Examples
+
+```bash
+# Publish pacts
+pact-broker-client publish ./pacts --broker-base-url https://mybroker.com
+
+# Check if safe to deploy
+pact-broker-client can-i-deploy --pacticipant MyConsumer --version 1.0.0 --to production
+
+# Record deployment
+pact-broker-client record-deployment --pacticipant MyProvider --version 2.1.0 --environment production
+```
+
+## Documentation
+
+- **CLI Documentation**: https://github.com/pact-foundation/pact-broker-cli/blob/main/README.md
+- **Pact Broker**: https://docs.pact.io/pact_broker
+- **Getting Started**: https://docs.pact.io/getting_started/
+
+Perfect for CI/CD pipelines and managing contract testing workflows in distributed systems.
+]]></description>
+    <releaseNotes>See https://github.com/pact-foundation/pact-broker-cli/releases for release notes</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\pact-broker-client\**" target="tools" />
+  </files>
+</package>

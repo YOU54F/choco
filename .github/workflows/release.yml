@@ -35,16 +35,12 @@ jobs:
       - name: Test scripts
         run: |
           cd C:\
-          pact.bat --help
           pact-broker.bat --help
           pact-message.bat --help
           pact-mock-service.bat --help
-          pact-plugin-cli.exe --help
           pact-provider-verifier.bat --help
           pact-stub-service.bat --help
           pactflow.bat --help
-          pact_mock_server_cli.exe --help
-          pact_verifier_cli.exe --help
       - run: choco uninstall pact
       - name: auth with choco registry
         run: choco apikey --key ${{ secrets.CHOCO_API_KEY }} --source https://push.chocolatey.org/
@@ -63,13 +59,9 @@ jobs:
       - name: Test scripts
         run: |
           cd C:\
-          pact.bat --help
           pact-broker.bat --help
           pact-message.bat --help
           pact-mock-service.bat --help
-          pact-plugin-cli.exe --help
           pact-provider-verifier.bat --help
           pact-stub-service.bat --help
           pactflow.bat --help
-          pact_mock_server_cli.exe --help
-          pact_verifier_cli.exe --help

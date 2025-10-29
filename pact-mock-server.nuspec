@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>pact-mock-server</id>
+    <version>2.1.0</version>
+    <packageSourceUrl>https://github.com/YOU54F/choco</packageSourceUrl>
+    <owners>YOU54F</owners>
+    <title>Pact Mock Server</title>
+    <authors>Pact Foundation</authors>
+    <projectUrl>https://github.com/pact-foundation/pact-reference</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/pact-foundation/pact-logo/master/media/logo-black.png</iconUrl>
+    <copyright>2024 Pact Foundation</copyright>
+    <licenseUrl>https://github.com/pact-foundation/pact-reference/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/pact-foundation/pact-reference</projectSourceUrl>
+    <docsUrl>https://docs.pact.io</docsUrl>
+    <bugTrackerUrl>https://github.com/pact-foundation/pact-reference/issues</bugTrackerUrl>
+    <tags>pact contract-testing testing api microservices mock-server</tags>
+    <summary>Standalone HTTP mock server for Pact consumer testing</summary>
+    <description><![CDATA[# Pact Mock Server
+
+Standalone HTTP mock server that creates mock services from Pact files for consumer testing. Built with Rust for high performance and reliability.
+
+## Features
+
+- **HTTP Mock Server** - Create mock services from Pact files
+- **Real-time Validation** - Verify requests match expectations in real-time
+- **Multiple Formats** - Support for Pact V2, V3, and V4 specifications
+- **Plugin Support** - Extensible through Pact plugins
+- **High Performance** - Built with Rust for speed and reliability
+- **Cross-platform** - Runs on Windows, macOS, and Linux
+
+## Quick Start
+
+1. **Check installation**: `pact-mock-server`
+2. **Start mock server**: `pact-mock-server start --pact <pact-file> --port 8080`
+3. **Create from directory**: `pact-mock-server create --pact-dir ./pacts --port 8080`
+4. **Verify interactions**: Mock server validates requests automatically
+
+## Examples
+
+```bash
+# Start mock server with a pact file
+pact-mock-server start --pact consumer-provider.json --port 8080
+
+# Start with multiple pact files
+pact-mock-server create --pact-dir ./pacts --port 8080
+
+# Start with specific host binding
+pact-mock-server start --pact consumer-provider.json --host 0.0.0.0 --port 8080
+```
+
+## Configuration
+
+- **Port**: Specify port with `--port`
+- **Host**: Bind to specific interface with `--host`
+- **CORS**: Enable CORS headers for browser testing
+- **TLS**: Support for HTTPS mock servers
+
+## Documentation
+
+- **CLI Documentation**: https://github.com/pact-foundation/pact-reference/blob/master/rust/pact_mock_server_cli/README.md
+- **Pact Documentation**: https://docs.pact.io
+- **Mock Server Guide**: https://docs.pact.io/implementation_guides/rust/pact_mock_server_cli
+
+Perfect for consumer-driven contract testing, allowing consumers to test against realistic mock services.
+]]></description>
+    <releaseNotes>See https://github.com/pact-foundation/pact-reference/releases for release notes</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\pact-mock-server\**" target="tools" />
+  </files>
+</package>

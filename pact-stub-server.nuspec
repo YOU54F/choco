@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>pact-stub-server</id>
+    <version>0.7.0</version>
+    <packageSourceUrl>https://github.com/YOU54F/choco</packageSourceUrl>
+    <owners>YOU54F</owners>
+    <title>Pact Stub Server</title>
+    <authors>Pact Foundation</authors>
+    <projectUrl>https://github.com/pact-foundation/pact-stub-server</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/pact-foundation/pact-logo/master/media/logo-black.png</iconUrl>
+    <copyright>2024 Pact Foundation</copyright>
+    <licenseUrl>https://github.com/pact-foundation/pact-stub-server/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/pact-foundation/pact-stub-server</projectSourceUrl>
+    <docsUrl>https://docs.pact.io</docsUrl>
+    <bugTrackerUrl>https://github.com/pact-foundation/pact-stub-server/issues</bugTrackerUrl>
+    <tags>pact contract-testing testing api microservices stub-server</tags>
+    <summary>Standalone HTTP server that generates responses from Pact files</summary>
+    <description><![CDATA[# Pact Stub Server
+
+Standalone HTTP server that generates responses from Pact files. Unlike mock servers that validate requests, stub servers simply return the configured responses, making them perfect for testing in environments where you need predictable service behavior.
+
+## Features
+
+- **HTTP Stub Server** - Generate responses from Pact files without validation
+- **Multiple Pact Files** - Load multiple Pact files simultaneously
+- **Request Matching** - Match requests to appropriate responses
+- **CORS Support** - Enable cross-origin requests for browser testing
+- **TLS Support** - HTTPS stub servers for secure testing
+- **High Performance** - Built with Rust for speed and reliability
+- **Cross-platform** - Runs on Windows, macOS, and Linux
+
+## Use Cases
+
+- **Integration Testing** - Stub external services during integration tests
+- **Development Environment** - Provide stable service responses during development
+- **Demo Systems** - Create predictable service behavior for demonstrations
+- **Load Testing** - Generate consistent responses for performance testing
+- **Offline Testing** - Test without external service dependencies
+
+## Quick Start
+
+1. **Check installation**: `pact-stub-server`
+2. **Start stub server**: `pact-stub-server --file consumer-provider.json --port 8080`
+3. **Multiple files**: `pact-stub-server --dir ./pacts --port 8080`
+4. **With CORS**: `pact-stub-server --file pact.json --port 8080 --cors`
+
+## Examples
+
+```bash
+# Start with single pact file
+pact-stub-server --file consumer-provider.json --port 8080
+
+# Load all pacts from directory
+pact-stub-server --dir ./pacts --port 8080
+
+# Enable CORS for browser testing
+pact-stub-server --file pact.json --port 8080 --cors
+
+# Bind to specific interface
+pact-stub-server --file pact.json --host 0.0.0.0 --port 8080
+
+# HTTPS stub server
+pact-stub-server --file pact.json --port 8443 --tls-cert cert.pem --tls-key key.pem
+```
+
+## Configuration
+
+- **Port**: Specify port with `--port`
+- **Host**: Bind to specific interface with `--host`
+- **CORS**: Enable CORS headers with `--cors`
+- **TLS**: Configure HTTPS with `--tls-cert` and `--tls-key`
+- **Logging**: Control log levels with `--loglevel`
+
+## Mock vs Stub
+
+- **Mock Server**: Validates requests match expectations (for consumer testing)
+- **Stub Server**: Simply returns responses (for integration/development)
+
+Choose stub servers when you need predictable responses without request validation.
+
+## Documentation
+
+- **Stub Server Guide**: https://github.com/pact-foundation/pact-stub-server/blob/master/README.md
+- **Pact Documentation**: https://docs.pact.io
+- **Integration Testing**: https://docs.pact.io/getting_started/stubs
+
+Perfect for creating stable test environments and eliminating external service dependencies.
+]]></description>
+    <releaseNotes>See https://github.com/pact-foundation/pact-stub-server/releases for release notes</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\pact-stub-server\**" target="tools" />
+  </files>
+</package>

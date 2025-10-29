@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>pact-plugin</id>
+    <version>0.2.0</version>
+    <packageSourceUrl>https://github.com/YOU54F/choco</packageSourceUrl>
+    <owners>YOU54F</owners>
+    <title>Pact Plugin CLI</title>
+    <authors>Pact Foundation</authors>
+    <projectUrl>https://github.com/pact-foundation/pact-plugins</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/pact-foundation/pact-logo/master/media/logo-black.png</iconUrl>
+    <copyright>2024 Pact Foundation</copyright>
+    <licenseUrl>https://github.com/pact-foundation/pact-plugins/blob/main/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/pact-foundation/pact-plugins</projectSourceUrl>
+    <docsUrl>https://docs.pact.io</docsUrl>
+    <bugTrackerUrl>https://github.com/pact-foundation/pact-plugins/issues</bugTrackerUrl>
+    <tags>pact contract-testing testing api microservices plugins extensibility</tags>
+    <summary>Plugin management CLI for extending Pact with custom protocol support</summary>
+    <description><![CDATA[# Pact Plugin CLI
+
+Plugin management command-line interface for the Pact plugin system. Enables installation, management, and execution of Pact plugins that extend contract testing to support custom protocols, message formats, and interaction types.
+
+## Features
+
+- **Plugin Management** - Install, list, and remove Pact plugins
+- **Protocol Extensions** - Support for gRPC, GraphQL, Avro, and custom protocols
+- **Plugin Discovery** - Discover available plugins from repositories
+- **Version Management** - Install specific plugin versions
+- **Repository Support** - Install from GitHub, local files, or plugin repositories
+- **Cross-platform** - Runs on Windows, macOS, and Linux
+
+## Quick Start
+
+1. **Check installation**: `pact-plugin`
+2. **List plugins**: `pact-plugin list`
+3. **Install plugin**: `pact-plugin install protobuf`
+4. **Install from GitHub**: `pact-plugin install --source github pact-foundation/pact-plugins`
+
+## Available Plugins
+
+Popular plugins include:
+- **protobuf** - Protocol Buffers support for gRPC testing
+- **avro** - Apache Avro message format support
+- **graphql** - GraphQL schema and query testing
+- **csv** - CSV data format support
+- **xml** - XML message format support
+
+## Examples
+
+```bash
+# List installed plugins
+pact-plugin list
+
+# Install protobuf plugin for gRPC
+pact-plugin install protobuf
+
+# Install specific version
+pact-plugin install protobuf --version 0.3.0
+
+# Install from GitHub repository
+pact-plugin install --source github pact-foundation/pact-protobuf-plugin
+
+# Remove plugin
+pact-plugin remove protobuf
+
+# Show plugin info
+pact-plugin info protobuf
+```
+
+## Configuration
+
+- **Plugin Directory**: `%USERPROFILE%\.pact\plugins\`
+- **Repository URLs**: Configure custom plugin repositories
+- **Proxy Support**: Respects system proxy settings
+
+## Plugin Development
+
+Create custom plugins to extend Pact with support for:
+- Custom message formats (JSON Schema, XML, Binary)
+- Transport protocols (gRPC, GraphQL, WebSockets)
+- Authentication methods
+- Specialized matchers and generators
+
+## Documentation
+
+- **Plugin System**: https://docs.pact.io/plugins
+- **CLI Documentation**: https://github.com/pact-foundation/pact-plugins/blob/main/cli/README.md
+- **Plugin Development**: https://docs.pact.io/plugins/development
+
+Essential for extending Pact's capabilities beyond HTTP to support modern microservice architectures.
+]]></description>
+    <releaseNotes>See https://github.com/pact-foundation/pact-plugins/releases for release notes</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\pact-plugin\**" target="tools" />
+  </files>
+</package>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Read this before creating packages: https://docs.chocolatey.org/en-us/create/create-packages -->
+<!-- Test your packages in a test environment: https://github.com/chocolatey/chocolatey-test-environment -->
+
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>pact-legacy</id>
+    <version>2.5.6</version>
+    <packageSourceUrl>https://github.com/YOU54F/choco</packageSourceUrl>
+    <title>pact legacy standalone cli tools</title>
+    <authors>Pact Foundation</authors>
+    <projectUrl>https://github.com/pact-foundation/pact-standalone</projectUrl>
+    <tags>pact</tags>
+    <summary>pact legacy standalone cli tool</summary>
+    <description>
+# Pact CLI Tools
+
+[Pact CLI tools](https://docs.pact.io/implementation_guides/cli) distributed with [Choco](https://chocolatey.org/), the Windows command-line installer.
+
+Contains a bundle with
+
+- Pact-Ruby-Standalone
+  - pact-broker.bat
+  - pact-message.bat
+  - pact-mock-service.bat
+  - pact-provider-verifier.bat
+  - pact-stub-service.bat
+  - pactflow.bat
+
+### Supported Platforms
+
+| OS           | Architecture | Supported |
+| ------- | ------------ | --------- |
+| Windows| x86_64       | ✅        |
+| Windows | aarch64 (via x86 emulation) |  ✅        |
+
+
+</description>
+  </metadata>
+  <files>
+    <!-- this section controls what actually gets packaged into the Chocolatey package -->
+    <file src="tools\pact-legacy\**" target="tools" />
+  </files>
+</package>

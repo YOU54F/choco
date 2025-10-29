@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>pact-verifier</id>
+    <version>1.3.0</version>
+    <packageSourceUrl>https://github.com/YOU54F/choco</packageSourceUrl>
+    <owners>YOU54F</owners>
+    <title>Pact Verifier</title>
+    <authors>Pact Foundation</authors>
+    <projectUrl>https://github.com/pact-foundation/pact-reference</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/pact-foundation/pact-logo/master/media/logo-black.png</iconUrl>
+    <copyright>2024 Pact Foundation</copyright>
+    <licenseUrl>https://github.com/pact-foundation/pact-reference/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/pact-foundation/pact-reference</projectSourceUrl>
+    <docsUrl>https://docs.pact.io</docsUrl>
+    <bugTrackerUrl>https://github.com/pact-foundation/pact-reference/issues</bugTrackerUrl>
+    <tags>pact contract-testing testing api microservices provider-verification</tags>
+    <summary>Standalone provider verification tool for Pact contract testing</summary>
+    <description><![CDATA[# Pact Verifier
+
+Standalone provider verification tool that verifies that a provider service fulfills the contracts defined in Pact files. Built with Rust for high performance and reliability.
+
+## Features
+
+- **Provider Verification** - Verify providers against consumer contracts
+- **Multiple Pact Sources** - Verify from files, URLs, or Pact Broker
+- **State Management** - Support for provider states and state changes
+- **Flexible Filtering** - Filter interactions by description or state
+- **Plugin Support** - Extensible through Pact plugins
+- **CI/CD Integration** - Perfect for automated verification pipelines
+- **Detailed Reporting** - Comprehensive verification results
+
+## Quick Start
+
+1. **Check installation**: `pact-verifier`
+2. **Verify from file**: `pact-verifier --pact-url ./consumer-provider.json --provider-base-url http://localhost:8080`
+3. **Verify from broker**: `pact-verifier --broker-url https://broker.com --provider MyProvider`
+4. **With state management**: `pact-verifier --pact-url ./pact.json --provider-base-url http://localhost:8080 --state-change-url http://localhost:8080/states`
+
+## Examples
+
+```bash
+# Verify against local pact file
+pact-verifier --pact-url ./consumer-provider.json --provider-base-url http://localhost:8080
+
+# Verify from Pact Broker
+pact-verifier --broker-url https://mybroker.com --provider MyProvider --provider-base-url http://localhost:8080
+
+# With authentication
+pact-verifier --broker-url https://mybroker.com --broker-username user --broker-password pass --provider MyProvider
+
+# Filter specific interactions
+pact-verifier --pact-url ./pact.json --provider-base-url http://localhost:8080 --filter-description "get user"
+```
+
+## Provider States
+
+Configure provider states for dynamic test data:
+```bash
+pact-verifier --pact-url ./pact.json \
+  --provider-base-url http://localhost:8080 \
+  --state-change-url http://localhost:8080/states
+```
+
+## Documentation
+
+- **CLI Documentation**: https://github.com/pact-foundation/pact-reference/blob/master/rust/pact_verifier_cli/README.md
+- **Provider Verification**: https://docs.pact.io/provider/using_pact_verifier_cli
+- **Pact Documentation**: https://docs.pact.io
+
+Essential for provider-side contract testing, ensuring APIs fulfill their consumer contracts.
+]]></description>
+    <releaseNotes>See https://github.com/pact-foundation/pact-reference/releases for release notes</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\pact-verifier\**" target="tools" />
+  </files>
+</package>
