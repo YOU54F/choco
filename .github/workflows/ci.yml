@@ -74,5 +74,6 @@ jobs:
           name: choco
           generate_release_notes: false
           files: './*.nupkg'
+          overwrite_files: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
