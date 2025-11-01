@@ -1,10 +1,10 @@
 $ErrorActionPreference = 'Stop'
 
 $packageName = 'pact'
-$url64 = 'https://github.com/you54f/pact-cli/releases/download/v0.9.0/pact-x86_64-windows-msvc.exe'
-$urlARM64 = 'https://github.com/you54f/pact-cli/releases/download/v0.9.0/pact-aarch64-windows-msvc.exe'
-$checksum64 = 'b2b80b76d099ce992a2659cb1e49d9bc8462441a48996191b4b149a4be6a0fdd'
-$checksumARM64 = '7ab2a33304d8eff5299cb4556aa06c9d822ccd8124c4da3973e529a92eb5987c'
+$url64 = 'https://github.com/pact-foundation/pact-cli/releases/download/v0.9.1/pact-x86_64-windows-msvc.exe'
+$urlARM64 = 'https://github.com/pact-foundation/pact-cli/releases/download/v0.9.1/pact-aarch64-windows-msvc.exe'
+$checksum64 = '40d331c094de58e9216dc330112622089b502c101d43023438d4c295dc825c10'
+$checksumARM64 = '1f243da250a083bc191ddcc17ba1a1aebf82fb45b72f0bf835256df41ba96614'
 
 
 # Determine architecture (ARM64 detection is unsuppported by Choco)
@@ -58,7 +58,7 @@ Write-Host "Quick start:" -ForegroundColor Yellow
 Write-Host "  pact --help                           # Show all available commands"
 Write-Host ""
 Write-Host "Documentation:" -ForegroundColor Yellow
-Write-Host "  - CLI Docs: https://github.com/YOU54F/pact-cli/blob/main/README.md"
+Write-Host "  - CLI Docs: https://github.com/pact-foundation/pact-cli/blob/main/README.md"
 Write-Host "  - Pact Docs: https://docs.pact.io"
 Write-Host ""
 Write-Host ""

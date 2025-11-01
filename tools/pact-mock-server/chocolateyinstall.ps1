@@ -1,10 +1,10 @@
 $ErrorActionPreference = 'Stop'
 
 $packageName = 'pact-mock-server'
-$url64 = 'https://github.com/you54f/pact-core-mock-server/releases/download/pact_mock_server_cli-v2.1.0/pact-mock-server-windows-x86_64.exe.gz'
-$urlARM64 = 'https://github.com/you54f/pact-core-mock-server/releases/download/pact_mock_server_cli-v2.1.0/pact-mock-server-windows-aarch64.exe.gz'
-$checksum64 = '58cba036160515b8f4fc29349b446fa93e9464414d35541cc97ace3c5b39e2b1'
-$checksumARM64 = '9311194927b634569ca7936bf9820024050d42e74c458847eda7c59794dff92c'
+$url64 = 'https://github.com/pact-foundation/pact-core-mock-server/releases/download/pact_mock_server_cli-v2.0.0/pact-mock-server-windows-x86_64.exe.gz'
+$urlARM64 = 'https://github.com/pact-foundation/pact-core-mock-server/releases/download/pact_mock_server_cli-v2.0.0/pact-mock-server-windows-aarch64.exe.gz'
+$checksum64 = 'dcae5f02a8af2fcfc2c9f4f5520a9543a91e95565c3697a60675a01a366dab50'
+$checksumARM64 = 'b026e51e278bb21f6066b733f73fd47773df9b89beb03e3830cfa3e1ef29b088'
 
 # Determine architecture
 $is64bit = [System.Environment]::Is64BitOperatingSystem

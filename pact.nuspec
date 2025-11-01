@@ -2,19 +2,19 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>pact</id>
-    <version>0.9.0</version>
-    <packageSourceUrl>https://github.com/YOU54F/pact-cli</packageSourceUrl>
-    <owners>YOU54F</owners>
+    <version>0.9.1</version>
+    <packageSourceUrl>https://github.com/pact-foundation/pact-cli</packageSourceUrl>
+    <owners>pact-foundation</owners>
     <title>Pact CLI</title>
-    <authors>YOU54F</authors>
-    <projectUrl>https://github.com/YOU54F/pact-cli</projectUrl>
+    <authors>pact-foundation</authors>
+    <projectUrl>https://github.com/pact-foundation/pact-cli</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/pact-foundation/pact-logo/master/media/logo-black.png</iconUrl>
-    <copyright>2024 YOU54F</copyright>
-    <licenseUrl>https://github.com/YOU54F/pact-cli/blob/main/LICENSE</licenseUrl>
+    <copyright>2024 pact-foundation</copyright>
+    <licenseUrl>https://github.com/pact-foundation/pact-cli/blob/main/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <projectSourceUrl>https://github.com/YOU54F/pact-cli</projectSourceUrl>
+    <projectSourceUrl>https://github.com/pact-foundation/pact-cli</projectSourceUrl>
     <docsUrl>https://docs.pact.io</docsUrl>
-    <bugTrackerUrl>https://github.com/YOU54F/pact-cli/issues</bugTrackerUrl>
+    <bugTrackerUrl>https://github.com/pact-foundation/pact-cli/issues</bugTrackerUrl>
     <tags>pact contract-testing testing api microservices cli</tags>
     <summary>Pact in a single binary - Mock/Stub Server, Provider Verifier, Broker Client &amp; Plugin CLI with Extensions</summary>
     <description><![CDATA[# Pact CLI with Extensions
@@ -57,7 +57,7 @@ pact pactflow ai --help                # Use extensions seamlessly
 
 ## Documentation
 
-- **Extensions Guide**: https://github.com/YOU54F/pact-cli/blob/main/EXTENSIONS.md
+- **Extensions Guide**: https://github.com/pact-foundation/pact-cli/blob/main/EXTENSIONS.md
 - **Pact Documentation**: https://docs.pact.io
 - **Getting Started**: https://docs.pact.io/getting_started/
 
@@ -77,7 +77,7 @@ pact pactflow ai --help                # Use extensions seamlessly
 
 Perfect for teams using contract-driven development and microservice architectures.
 ]]></description>
-    <releaseNotes>See https://github.com/YOU54F/pact-cli/releases for release notes</releaseNotes>
+    <releaseNotes>See https://github.com/pact-foundation/pact-cli/releases for release notes</releaseNotes>
   </metadata>
   <files>
     <file src="tools\pact\**" target="tools" />

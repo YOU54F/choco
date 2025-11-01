@@ -25,4 +25,4 @@ Write-Host ""
 Write-Host "Pact CLI uninstalled successfully!" -ForegroundColor Green
 Write-Host ""
 Write-Host "Thank you for using Pact CLI!" -ForegroundColor Cyan
-Write-Host "For feedback or issues: https://github.com/YOU54F/pact-cli/issues" -ForegroundColor Gray
+Write-Host "For feedback or issues: https://github.com/pact-foundation/pact-cli/issues" -ForegroundColor Gray

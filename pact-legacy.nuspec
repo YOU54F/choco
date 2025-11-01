@@ -6,7 +6,7 @@
   <metadata>
     <id>pact-legacy</id>
     <version>2.5.6</version>
-    <packageSourceUrl>https://github.com/YOU54F/choco</packageSourceUrl>
+    <packageSourceUrl>https://github.com/pact-foundation/choco</packageSourceUrl>
     <title>pact legacy standalone cli tools</title>
     <authors>Pact Foundation</authors>
     <projectUrl>https://github.com/pact-foundation/pact-standalone</projectUrl>
